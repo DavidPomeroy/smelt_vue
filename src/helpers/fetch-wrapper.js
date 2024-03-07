@@ -13,6 +13,7 @@ function request(method) {
             method,
             headers: authHeader(url)
         };
+        console.log(body);
         if (body) {
             requestOptions.headers['Content-Type'] = 'application/json';
             requestOptions.body = JSON.stringify(body);

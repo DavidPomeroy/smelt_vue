@@ -10,9 +10,9 @@ export const useAzureBillingItemsStore = defineStore({
         azurebillingitems: {}
     }),
     actions: {
-        async getAll() {
+        async getAll(options) {
             this.azurebillingitems = { loading: true };
-            fetchWrapper.get(baseUrl)
+            fetchWrapper.post(baseUrl, options)
                 .then(azurebillingitems => {
                     this.azurebillingitems = azurebillingitems.data
                 })
